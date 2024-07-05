@@ -1,3 +1,4 @@
+using System.Drawing.Drawing2D;
 using System.Threading;
 
 namespace CS_DrawingUsingCode_Example
@@ -31,7 +32,7 @@ namespace CS_DrawingUsingCode_Example
             isRun = !isRun;
 
             ThreadPool.QueueUserWorkItem(delegate
-            {                
+            {
                 CreateGraphics().Clear(BackColor);
                 int x = 400, y = 120, z = 300;
                 while (true)
@@ -154,6 +155,16 @@ namespace CS_DrawingUsingCode_Example
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             isRun = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            isRun = false;
+            CreateGraphics().Clear(BackColor);
+
+            Rectangle rectangle = new Rectangle(200, 200, 100, 100);
+            LinearGradientBrush linear = new LinearGradientBrush(rectangle, Color.AliceBlue, Color.Black, LinearGradientMode.Vertical);
+            CreateGraphics().FillRectangle(linear, rectangle);
         }
     }
 }

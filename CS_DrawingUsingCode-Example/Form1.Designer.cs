@@ -37,6 +37,8 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
+            button10 = new Button();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -129,12 +131,31 @@
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
+            // button10
+            // 
+            button10.Location = new Point(757, 488);
+            button10.Name = "button10";
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 9;
+            button10.Text = "button10";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(757, 459);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(75, 23);
+            textBox1.TabIndex = 10;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(984, 561);
+            Controls.Add(textBox1);
+            Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -148,6 +169,7 @@
             Text = "Form1";
             FormClosing += Form1_FormClosing;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -161,5 +183,7 @@
         private Button button7;
         private Button button8;
         private Button button9;
+        private Button button10;
+        private TextBox textBox1;
     }
 }

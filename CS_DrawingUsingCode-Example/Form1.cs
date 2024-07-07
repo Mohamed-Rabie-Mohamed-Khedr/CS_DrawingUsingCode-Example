@@ -194,5 +194,17 @@ namespace CS_DrawingUsingCode_Example
             CreateGraphics().FillPie(Brushes.Olive, 150, 150, 200, 200, ePie1 + ePie2, ePie3);
             CreateGraphics().FillPie(Brushes.PaleGreen, 150, 150, 200, 200, ePie1 + ePie2 + ePie3, ePie4);
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            isRun = false;
+            CreateGraphics().Clear(BackColor);
+
+            CreateGraphics().DrawString(textBox1.Text, Font, Brushes.Red, 150, 200);
+
+            SizeF S = CreateGraphics().MeasureString(textBox1.Text, Font);
+            CreateGraphics().FillRectangle(Brushes.Plum, 150 + S.Width, 100, 100, 100);
+            CreateGraphics().FillRectangle(Brushes.Plum, 150, 200 + S.Height, 100, 100);
+        }
     }
 }
